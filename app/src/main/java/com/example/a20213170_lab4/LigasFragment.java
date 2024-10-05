@@ -77,6 +77,9 @@ public class LigasFragment extends Fragment {
 
     private void fetchAllLigas() {
 
+        adapter = new CardLigaAdapter(new ArrayList<>());
+        recyclerView.setAdapter(adapter);
+
         List<CardLigaModel> ligasObtenidas = new ArrayList<>();  // Aquí irían los datos obtenidos
 
         Retrofit retrofit = new Retrofit.Builder()
