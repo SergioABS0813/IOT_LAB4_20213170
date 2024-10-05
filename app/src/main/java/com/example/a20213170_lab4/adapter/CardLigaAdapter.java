@@ -37,9 +37,9 @@ public class CardLigaAdapter extends RecyclerView.Adapter<CardLigaAdapter.LigaVi
         CardLigaModel liga = ligaList.get(position);
 
         // Asignar los valores del modelo a los elementos de la vista
-        holder.txtNombreLiga.setText(liga.getNombreLiga());
-        holder.txtCategoriaDeporte.setText("Deporte: " + liga.getCategoriaDeporte());
-        holder.txtNombreAlternativo.setText(liga.getNombreAlternativo());
+        holder.txtNombreLiga.setText(liga.getStrLeague());
+        holder.txtCategoriaDeporte.setText("Deporte: " + liga.getStrSport());
+        holder.txtNombreAlternativo.setText(liga.getStrLeagueAlternate());
     }
 
     @Override

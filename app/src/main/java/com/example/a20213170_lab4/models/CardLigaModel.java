@@ -2,16 +2,16 @@ package com.example.a20213170_lab4.models;
 
 public class CardLigaModel {
     private String idLeague;
-    private String nombreLiga;
-    private String categoriaDeporte;
-    private String nombreAlternativo;
+    private String strLeague;
+    private String strSport;
+    private String strLeagueAlternate;
 
     // Constructor
-    public CardLigaModel(String idLeague, String nombreLiga, String categoriaDeporte, String nombreAlternativo) {
+    public CardLigaModel(String idLeague, String strLeague, String strSport, String strLeagueAlternate) {
         this.idLeague = idLeague;
-        this.nombreLiga = nombreLiga;
-        this.categoriaDeporte = categoriaDeporte;
-        this.nombreAlternativo = nombreAlternativo;
+        this.strLeague = strLeague;
+        this.strSport = strSport;
+        this.strLeagueAlternate = strLeagueAlternate;
     }
 
     // Getters y Setters
@@ -23,27 +23,27 @@ public class CardLigaModel {
         this.idLeague = idLeague;
     }
 
-    public String getNombreLiga() {
-        return nombreLiga;
+    public String getStrLeague() {
+        return strLeague;
     }
 
-    public void setNombreLiga(String nombreLiga) {
-        this.nombreLiga = nombreLiga;
+    public void setStrLeague(String strLeague) {
+        this.strLeague = strLeague;
     }
 
-    public String getCategoriaDeporte() {
-        return categoriaDeporte;
+    public String getStrSport() {
+        return strSport;
     }
 
-    public void setCategoriaDeporte(String categoriaDeporte) {
-        this.categoriaDeporte = categoriaDeporte;
+    public void setStrSport(String strSport) {
+        this.strSport = strSport;
     }
 
-    public String getNombreAlternativo() {
-        return nombreAlternativo;
+    public String getStrLeagueAlternate() {
+        return strLeagueAlternate;
     }
 
-    public void setNombreAlternativo(String nombreAlternativo) {
-        this.nombreAlternativo = nombreAlternativo;
+    public void setStrLeagueAlternate(String strLeagueAlternate) {
+        this.strLeagueAlternate = strLeagueAlternate;
     }
 }
