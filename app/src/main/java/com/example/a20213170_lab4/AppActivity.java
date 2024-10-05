@@ -51,46 +51,47 @@ public class AppActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
+
                 if(itemId == R.id.navLigas){
                     if (currentFragmentIndex != 0) {  // Solo reemplazar si no está en Inicio
                         getSupportFragmentManager().beginTransaction()
                                 .setCustomAnimations(R.anim.swipe_in_right, R.anim.swipe_out_right)
                                 .replace(R.id.frameLayout, ligasFragment)
-                                .addToBackStack(null)  // Agregar a la pila de retroceso
                                 .commit();
                         currentFragmentIndex = 0;  // Actualizar el índice actual del fragmento
                     }
+                    clearBackStack();
                     return true;
                 } else if (itemId == R.id.navPosiciones) {
                     if (currentFragmentIndex == 0) {  // Solo reemplazar si no está en Inicio
                         getSupportFragmentManager().beginTransaction()
                                 .setCustomAnimations(R.anim.swipe_in_left, R.anim.swipe_out_left)
                                 .replace(R.id.frameLayout, posicionesFragment)
-                                .addToBackStack(null)  // Agregar a la pila de retroceso
                                 .commit();
                         currentFragmentIndex = 1;  // Actualizar el índice actual del fragmento
                     } else if (currentFragmentIndex == 2) {
                         getSupportFragmentManager().beginTransaction()
                                 .setCustomAnimations(R.anim.swipe_in_right, R.anim.swipe_out_right)
                                 .replace(R.id.frameLayout, posicionesFragment)
-                                .addToBackStack(null)  // Agregar a la pila de retroceso
                                 .commit();
                         currentFragmentIndex = 1;  // Actualizar el índice actual del fragmento
 
                     }
+                    clearBackStack();
                     return true;
                 } else if (itemId == R.id.navResultados) {
                     if (currentFragmentIndex != 2) {  // Solo reemplazar si no está en Inicio
                         getSupportFragmentManager().beginTransaction()
                                 .setCustomAnimations(R.anim.swipe_in_left, R.anim.swipe_out_left)
                                 .replace(R.id.frameLayout, resultadosFragment)
-                                .addToBackStack(null)  // Agregar a la pila de retroceso
                                 .commit();
                         currentFragmentIndex = 2;  // Actualizar el índice actual del fragmento
                     }
+                    clearBackStack();
                     return true;
                 }
                 cargarFragmento(new LigasFragment(), true);
+                clearBackStack();
                 return true;
             }
         });
@@ -109,4 +110,14 @@ public class AppActivity extends AppCompatActivity {
 
     }
 
+    // Método para limpiar el BackStack
+    private void clearBackStack() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        if (fragmentManager.getBackStackEntryCount() > 0) {
+            FragmentManager.BackStackEntry first = fragmentManager.getBackStackEntryAt(0);
+            fragmentManager.popBackStack(first.getId(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        }
+
+
+    }
 }
