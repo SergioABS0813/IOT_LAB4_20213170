@@ -13,5 +13,11 @@ public interface ApiService {
     @GET("search_all_leagues.php")
     Call<LigasResponseCountry> getAllLeaguesByCountry(@Query("c") String country);
 
+    @GET("lookuptable.php")
+    Call<EquipoResponseTable> getTable(
+            @Query("l") String idLiga,
+            @Query("s") String temporada
+    );
+
 
 }
