@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="5dp"
+    app:cardElevation="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/imgCompetencia"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/txtNombreCompetencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="Premier League"
+                android:textAlignment="textStart"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtRonda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="Ronda: 18"
+                android:textAlignment="textStart"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtEquipoLocal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="Equipo local: Arsenal"
+                android:textAlignment="textStart"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtEquipoVisitante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="Equipo visitante: Manchester City"
+                android:textAlignment="textStart"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="Resultado: 3-1"
+                android:textAlignment="textStart"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtFechaEncuentro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="Fecha de encuentro: 13/06/24"
+                android:textAlignment="textStart"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtCantidadEspectadores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="Cantidad de asistentes: 48000"
+                android:textAlignment="textStart"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -19,5 +19,14 @@ public interface ApiService {
             @Query("s") String temporada
     );
 
+    @GET("eventsround.php")
+    Call<EventResponse> getEvent(
+            @Query("id") String idLiga,
+            @Query("r") String ronda,
+            @Query("s") String temporada
+    );
+
+
+
 
 }
