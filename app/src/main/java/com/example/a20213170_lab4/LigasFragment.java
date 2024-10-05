@@ -91,8 +91,6 @@ public class LigasFragment extends Fragment {
             @Override
             public void onResponse(Call<LigasResponse> call, Response<LigasResponse> response) {
                 if(response.isSuccessful() && response.body() != null){
-                    //mensaje de exito
-                    Toast.makeText(getContext(), "VALIDO", Toast.LENGTH_SHORT).show();
                     List<CardLigaModel> ligasObtenidas = response.body().getLeagues(); //obtenemos las ligas
                     adapter = new CardLigaAdapter(ligasObtenidas); //las seteamos en el adapter
                     recyclerView.setAdapter(adapter);
