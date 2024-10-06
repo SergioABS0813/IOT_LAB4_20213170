@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.a20213170_lab4.adapter.CardLigaAdapter;
+import com.example.a20213170_lab4.adapter.EquipoAdapter;
 import com.example.a20213170_lab4.models.CardLigaModel;
 
 import java.util.ArrayList;
@@ -77,9 +78,11 @@ public class LigasFragment extends Fragment {
 
     private void fetchAllLigas() {
 
-        adapter = new CardLigaAdapter(new ArrayList<>());
-        recyclerView.setAdapter(adapter);
-
+        // Reinicia la lista antes de hacer la nueva búsqueda
+        if (adapter != null) {
+            adapter = new CardLigaAdapter(new ArrayList<>()); // Asigna un adapter con una lista vacía
+            recyclerView.setAdapter(adapter); // Establece el adapter vacío
+        }
         List<CardLigaModel> ligasObtenidas = new ArrayList<>();  // Aquí irían los datos obtenidos
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -111,6 +114,12 @@ public class LigasFragment extends Fragment {
     }
 
     private void fetchLigasByCountry(String pais) {
+
+        // Reinicia la lista antes de hacer la nueva búsqueda
+        if (adapter != null) {
+            adapter = new CardLigaAdapter(new ArrayList<>()); // Asigna un adapter con una lista vacía
+            recyclerView.setAdapter(adapter); // Establece el adapter vacío
+        }
         List<CardLigaModel> ligasObtenidas = new ArrayList<>();
 
         Retrofit retrofit = new Retrofit.Builder()
